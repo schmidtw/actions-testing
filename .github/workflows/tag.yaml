@@ -24,7 +24,7 @@ jobs:
         export NOTES=$(cat CHANGELOG.md | perl -0777 -ne 'print "$ENV{TODAY}\n\n$1\n" if /.*## \[$ENV{TAG}\]\s(.*?)\s+## \[(v\d+.\d+.\d+)\].*/s')
 
     - name: possibly tag commit
-      if: "$TAG" != "" && "$TAG" != "$OLD_VERSION"
+      if: "$TAG != "" && $TAG != $OLD_VERSION
       run: |
         git tag -a "$TAG" -m "$NOTES"
         git push origin --tags
