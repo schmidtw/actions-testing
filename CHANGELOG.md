@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v0.1.13]
+- leveraging workaround with actions/checkout@v2
+
+## [v0.1.12]
+- manual tag creation
+
 ## [v0.1.11]
 - condense workflow files
 
@@ -46,7 +52,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v0.1.0]
 - Initial creation
 
-[Unreleased]: https://github.com/xmidt-org/__PROJECT__/compare/v0.1.11..HEAD
+[Unreleased]: https://github.com/xmidt-org/__PROJECT__/compare/v0.1.13..HEAD
+[v0.1.13]: https://github.com/xmidt-org/__PROJECT__/compare/0.1.12...v0.1.13
+[v0.1.12]: https://github.com/xmidt-org/__PROJECT__/compare/0.1.11...v0.1.12
 [v0.1.11]: https://github.com/xmidt-org/__PROJECT__/compare/0.1.10...v0.1.11
 [v0.1.10]: https://github.com/xmidt-org/__PROJECT__/compare/0.1.9...v0.1.10
 [v0.1.9]: https://github.com/xmidt-org/__PROJECT__/compare/0.1.8...v0.1.9
