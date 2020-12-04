@@ -16,17 +16,18 @@ jobs:
         git config --global user.name "xmidt-bot"
         git config --global user.email "$BOT_EMAIL"
 
-    - name: export variables
+    - name: export variables and tag commit
       run: |
         export OLD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1` | tail -1 | sed 's/v\(.*\)/\1/')
         export TAG=$(cat CHANGELOG.md | perl -0777 -ne 'print "$1" if /.*## \[Unreleased\]\s+## \[(v\d+.\d+.\d+)\].*/s')
         export TODAY=`date +'%m/%d/%Y'`
         export NOTES=$(cat CHANGELOG.md | perl -0777 -ne 'print "$ENV{TODAY}\n\n$1\n" if /.*## \[$ENV{TAG}\]\s(.*?)\s+## \[(v\d+.\d+.\d+)\].*/s')
+        if [[ "$TAG" != "" && "$TAG" != "$OLD_VERSION" ]]; then git tag -a "$TAG" -m "$NOTES"; git push origin --tags; echo $?; fi
 
-    - name: tag commit
-      if: ${{ "$TAG" != "" && "$TAG" != "$OLD_VERSION" }}
-      run: |
-        git tag -a "$TAG" -m "$NOTES"
-        git push origin --tags
+    # - name: tag commit
+    #   if: ${{ "$TAG" != "" && "$TAG" != "$OLD_VERSION" }}
+    #   run: |
+    #     git tag -a "$TAG" -m "$NOTES"
+    #     git push origin --tags
 
     
