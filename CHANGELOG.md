@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v0.1.3]
+- hello v0.1.3
+
 ## [v0.1.2]
 - So close!
 
