@@ -19,7 +19,7 @@ jobs:
           git config --global user.email "$BOT_EMAIL"
       - name: export variables and tag commit
         run: |
-          export OLD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1` | tail -1 | sed 's/v\(.*\)/\1/')
+          export OLD_VERSION=$(git describe --tags `git rev-list --tags --max-count=1` | tail -1)
           export TAG=$(cat CHANGELOG.md | perl -0777 -ne 'print "$1" if /.*## \[Unreleased\]\s+## \[(v\d+.\d+.\d+)\].*/s')
           export TODAY=`date +'%m/%d/%Y'`
           export NOTES=$(cat CHANGELOG.md | perl -0777 -ne 'print "$ENV{TODAY}\n\n$1\n" if /.*## \[$ENV{TAG}\]\s(.*?)\s+## \[(v\d+.\d+.\d+)\].*/s')
