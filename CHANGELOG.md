@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [v0.3.2]
+- removed platforms
+- body with pretty [markdown](https://github.com/xmidt-org/actions-testing)
+
 ## [v0.3.1]
 - merged docker.yaml into release.yaml
 
@@ -62,7 +66,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [v0.1.0]
 - Initial creation
 
-[Unreleased]: https://github.com/xmidt-org/__PROJECT__/compare/v0.3.1..HEAD
+[Unreleased]: https://github.com/xmidt-org/__PROJECT__/compare/v0.3.2..HEAD
+[v0.3.2]: https://github.com/xmidt-org/__PROJECT__/compare/0.3.1...v0.3.2
 [v0.3.1]: https://github.com/xmidt-org/__PROJECT__/compare/0.3.0...v0.3.1
 [v0.3.0]: https://github.com/xmidt-org/__PROJECT__/compare/0.2.0...v0.3.0
 [v0.2.0]: https://github.com/xmidt-org/__PROJECT__/compare/0.1.13...v0.2.0
