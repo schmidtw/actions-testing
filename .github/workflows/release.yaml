@@ -8,9 +8,13 @@ on:
 
 jobs:
   release:
-    runs-on: [ubuntu-latest]
+    runs-on: [ ubuntu-latest ]
     steps:
       - uses: actions/checkout@v2
+      - name: Prepare Release Body
+        id: prep
+        run: |
+          echo ::set-output name=body::$(git cat-file tag ${{ github.ref }} | tail -n+8)
       - name: create release
         id: create_release
         uses: actions/create-release@v1
@@ -20,6 +24,7 @@ jobs:
           tag_name: ${{ github.ref }}
           draft: false
           prerelease: false
+          body: ${{ steps.prep.outputs.body }}
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
