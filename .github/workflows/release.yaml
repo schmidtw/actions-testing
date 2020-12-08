@@ -14,7 +14,8 @@ jobs:
       - name: Prepare Release Body
         id: prep
         run: |
-          echo ::set-output name=body::$(git cat-file tag ${{ github.ref }} | tail -n+8)
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo ::set-output name=body::$(git cat-file tag ${VERSION} | tail -n+8)
       - name: create release
         id: create_release
         uses: actions/create-release@v1
