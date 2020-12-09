@@ -15,6 +15,7 @@ actions-testing
 *.out
 coverage*
 report.json
+errors.txt
 
 # Ignore the vendor structure
 *vendor/
@@ -24,3 +25,7 @@ report.json
 
 # Vim
 *.swp
+
+#ide
+.idea/
+
